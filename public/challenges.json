@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Center the Box",
+    "difficulty": "Beginner",
+    "description": "Center the red box both horizontally and vertically within its container.",
+    "goalHtml": "<div class='container'><div class='box'></div></div>",
+    "goalCss": ".container{display:flex;align-items:center;justify-content:center;height:200px;background:#f3f3f3;border:2px dashed #ccc}.box{width:60px;height:60px;background:red}",
+    "starterCode": "/* Write your CSS here */\n.container { }\n.box { }"
+  },
+  {
+    "id": 2,
+    "title": "Responsive Grid Layout",
+    "difficulty": "Intermediate",
+    "description": "Create a responsive grid with 1 column on mobile and 3 on desktop.",
+    "goalHtml": "<div class='container'><div class='item'></div><div class='item'></div><div class='item'></div></div>",
+    "goalCss": ".container{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:768px){.container{grid-template-columns:repeat(3,1fr)}}.item{background:skyblue;height:60px}",
+    "starterCode": ".container { }\n.item { }"
+  },
+  {
+    "id": 3,
+    "title": "Flex Row to Column",
+    "difficulty": "Beginner",
+    "description": "Make boxes stack in a column on mobile and row on desktop.",
+    "goalHtml": "<div class='container'><div class='box'></div><div class='box'></div><div class='box'></div></div>",
+    "goalCss": ".container{display:flex;flex-direction:column;gap:8px}@media(min-width:768px){.container{flex-direction:row}}.box{flex:1;height:60px;background:orange}",
+    "starterCode": ".container { }\n.box { }"
+  },
+  {
+    "id": 4,
+    "title": "Circle Shape",
+    "difficulty": "Beginner",
+    "description": "Turn the square into a perfect circle.",
+    "goalHtml": "<div class='container'><div class='circle'></div></div>",
+    "goalCss": ".container{display:flex;justify-content:center;align-items:center;height:200px}.circle{width:80px;height:80px;background:green;border-radius:50%}",
+    "starterCode": ".circle { }"
+  },
+  {
+    "id": 5,
+    "title": "Navigation Bar",
+    "difficulty": "Intermediate",
+    "description": "Create a horizontal navigation bar with spaced links.",
+    "goalHtml": "<nav class='navbar'><a>Home</a><a>About</a><a>Contact</a></nav>",
+    "goalCss": ".navbar{display:flex;gap:20px;background:#222;padding:10px}.navbar a{color:#fff;text-decoration:none}",
+    "starterCode": ".navbar { }\n.navbar a { }"
+  },
+  {
+    "id": 6,
+    "title": "Card Shadow",
+    "difficulty": "Beginner",
+    "description": "Add a shadow and padding to the card.",
+    "goalHtml": "<div class='card'>Hello Card</div>",
+    "goalCss": ".card{padding:20px;background:white;box-shadow:0 4px 6px rgba(0,0,0,.1);border-radius:8px}",
+    "starterCode": ".card { }"
+  },
+  {
+    "id": 7,
+    "title": "Hover Button",
+    "difficulty": "Beginner",
+    "description": "Make button change color on hover.",
+    "goalHtml": "<button class='btn'>Click Me</button>",
+    "goalCss": ".btn{padding:10px 20px;background:blue;color:#fff;border:none;border-radius:4px;cursor:pointer}.btn:hover{background:darkblue}",
+    "starterCode": ".btn { }"
+  },
+  {
+    "id": 8,
+    "title": "Sticky Header",
+    "difficulty": "Intermediate",
+    "description": "Make the header stick to the top.",
+    "goalHtml": "<header class='header'>Sticky Header</header>",
+    "goalCss": ".header{position:sticky;top:0;background:#333;color:#fff;padding:10px}",
+    "starterCode": ".header { }"
+  },
+  {
+    "id": 9,
+    "title": "Centered Text",
+    "difficulty": "Beginner",
+    "description": "Center text both vertically and horizontally.",
+    "goalHtml": "<div class='container'>Centered</div>",
+    "goalCss": ".container{display:flex;align-items:center;justify-content:center;height:150px;background:#f3f3f3}",
+    "starterCode": ".container { }"
+  },
+  {
+    "id": 10,
+    "title": "Two Column Layout",
+    "difficulty": "Intermediate",
+    "description": "Split the container into two equal columns.",
+    "goalHtml": "<div class='container'><div class='col'></div><div class='col'></div></div>",
+    "goalCss": ".container{display:grid;grid-template-columns:1fr 1fr;gap:10px}.col{height:100px;background:lightcoral}",
+    "starterCode": ".container { }\n.col { }"
+  },
+  {
+    "id": 11,
+    "title": "Absolute Centering",
+    "difficulty": "Intermediate",
+    "description": "Use position absolute to center the box.",
+    "goalHtml": "<div class='container'><div class='box'></div></div>",
+    "goalCss": ".container{position:relative;height:200px;background:#eee}.box{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:purple}",
+    "starterCode": ".container { }\n.box { }"
+  },
+  {
+    "id": 12,
+    "title": "Image Cover",
+    "difficulty": "Beginner",
+    "description": "Make the image cover the container fully.",
+    "goalHtml": "<div class='img-container'><img src='https://via.placeholder.com/150'></div>",
+    "goalCss": ".img-container{width:200px;height:150px;overflow:hidden}.img-container img{width:100%;height:100%;object-fit:cover}",
+    "starterCode": ".img-container { }\n.img-container img { }"
+  },
+  {
+    "id": 13,
+    "title": "Flexbox Space Between",
+    "difficulty": "Beginner",
+    "description": "Space out boxes using space-between.",
+    "goalHtml": "<div class='container'><div class='box'></div><div class='box'></div><div class='box'></div></div>",
+    "goalCss": ".container{display:flex;justify-content:space-between}.box{width:50px;height:50px;background:teal}",
+    "starterCode": ".container { }\n.box { }"
+  },
+  {
+    "id": 14,
+    "title": "Grid Gap",
+    "difficulty": "Beginner",
+    "description": "Make grid with equal gaps.",
+    "goalHtml": "<div class='grid'><div></div><div></div><div></div></div>",
+    "goalCss": ".grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px} .grid div{background:pink;height:60px}",
+    "starterCode": ".grid { }"
+  },
+  {
+    "id": 15,
+    "title": "Text Overflow Ellipsis",
+    "difficulty": "Intermediate",
+    "description": "Truncate text with ellipsis.",
+    "goalHtml": "<p class='text'>This is a long sentence that should be truncated.</p>",
+    "goalCss": ".text{width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid #ccc;padding:4px}",
+    "starterCode": ".text { }"
+  },
+  {
+    "id": 16,
+    "title": "Gradient Background",
+    "difficulty": "Beginner",
+    "description": "Apply a linear gradient background.",
+    "goalHtml": "<div class='gradient'></div>",
+    "goalCss": ".gradient{height:100px;background:linear-gradient(to right, red, yellow)}",
+    "starterCode": ".gradient { }"
+  },
+  {
+    "id": 17,
+    "title": "Center with Grid",
+    "difficulty": "Beginner",
+    "description": "Use CSS grid to center content.",
+    "goalHtml": "<div class='container'>Centered</div>",
+    "goalCss": ".container{display:grid;place-items:center;height:200px;background:#f0f0f0}",
+    "starterCode": ".container { }"
+  },
+  {
+    "id": 18,
+    "title": "Fixed Footer",
+    "difficulty": "Intermediate",
+    "description": "Make the footer fixed at the bottom.",
+    "goalHtml": "<footer class='footer'>Footer</footer>",
+    "goalCss": ".footer{position:fixed;bottom:0;left:0;right:0;background:#444;color:#fff;text-align:center;padding:10px}",
+    "starterCode": ".footer { }"
+  },
+  {
+    "id": 19,
+    "title": "Border Radius Card",
+    "difficulty": "Beginner",
+    "description": "Give the card rounded corners.",
+    "goalHtml": "<div class='card'>Rounded</div>",
+    "goalCss": ".card{padding:20px;background:#fff;border-radius:16px;border:1px solid #ddd}",
+    "starterCode": ".card { }"
+  },
+  {
+    "id": 20,
+    "title": "Z-index Overlap",
+    "difficulty": "Intermediate",
+    "description": "Make the red box overlap the blue box.",
+    "goalHtml": "<div class='container'><div class='blue'></div><div class='red'></div></div>",
+    "goalCss": ".container{position:relative;height:150px}.blue{width:100px;height:100px;background:blue;position:absolute;top:20px;left:20px;z-index:1}.red{width:100px;height:100px;background:red;position:absolute;top:40px;left:40px;z-index:2}",
+    "starterCode": ".container { }\n.blue { }\n.red { }"
+  }
+]
