@@ -114,16 +114,16 @@ export default function Playground() {
   const handleSubmit = () => {
     const goalCss = challenge?.goalCss || challenge?.css?.goal || "";
     const isMatch = normalizeCss(userCSS) === normalizeCss(goalCss);
-
+  
     if (isMatch) {
       showToast("✅ Correct! Your CSS matches the goal.", "success");
-
+  
       const completedChallenges =
         JSON.parse(localStorage.getItem("completedChallenges")) || [];
-
+  
       const userSolutions =
         JSON.parse(localStorage.getItem("userSolutions")) || {};
-
+  
       if (!completedChallenges.includes(challenge.id)) {
         completedChallenges.push(challenge.id);
         localStorage.setItem(
@@ -131,15 +131,19 @@ export default function Playground() {
           JSON.stringify(completedChallenges)
         );
       }
-
+  
       userSolutions[challenge.id] = { html: userHTML, css: userCSS };
       localStorage.setItem("userSolutions", JSON.stringify(userSolutions));
-
+  
       setTimeout(() => {
         navigate("/challenges");
       }, 1200);
+    } else {
+      // Show a toast for incorrect submission
+      showToast("❌ Incorrect. Please try again.", "error");
     }
   };
+  
 
   if (loading)
     return (
