@@ -51,17 +51,17 @@ Copy code
 ## ⚙️ How to Run Locally
 
 1. Clone the repository  
-   git clone https://github.com/ShardulDhiwar/FixTheUI.git
+  ``` git clone https://github.com/ShardulDhiwar/FixTheUI.git```
    
 2. Navigate to the project folder
-   cd FixTheUI
+  ``` cd FixTheUI ```
 
 3. Install dependencies
-  npm install
+  ```npm install```
 
 4. Start the development server
-  npm run dev
-  Open your browser at http://localhost:3000 (or the specified port) and see the interface improvements in action.
+ ``` npm run dev```
+  ```Open your browser at http://localhost:3000 (or the specified port) and see the interface improvements in action.```
 
 
 
