@@ -50,9 +50,7 @@ export default function Playground() {
   const navigate = useNavigate();
 
   // 🔥 Theme state (dark by default, but persistent)
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "dark"
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -114,16 +112,16 @@ export default function Playground() {
   const handleSubmit = () => {
     const goalCss = challenge?.goalCss || challenge?.css?.goal || "";
     const isMatch = normalizeCss(userCSS) === normalizeCss(goalCss);
-  
+
     if (isMatch) {
       showToast("✅ Correct! Your CSS matches the goal.", "success");
-  
+
       const completedChallenges =
         JSON.parse(localStorage.getItem("completedChallenges")) || [];
-  
+
       const userSolutions =
         JSON.parse(localStorage.getItem("userSolutions")) || {};
-  
+
       if (!completedChallenges.includes(challenge.id)) {
         completedChallenges.push(challenge.id);
         localStorage.setItem(
@@ -131,19 +129,17 @@ export default function Playground() {
           JSON.stringify(completedChallenges)
         );
       }
-  
+
       userSolutions[challenge.id] = { html: userHTML, css: userCSS };
       localStorage.setItem("userSolutions", JSON.stringify(userSolutions));
-  
+
       setTimeout(() => {
         navigate("/challenges");
       }, 1200);
     } else {
-      // Show a toast for incorrect submission
       showToast("❌ Incorrect. Please try again.", "error");
     }
   };
-  
 
   if (loading)
     return (
@@ -180,18 +176,28 @@ export default function Playground() {
 
   // 🎨 Light/Dark theme styles
   const isDark = theme === "dark";
-  const bgClass = isDark ? "bg-gray-900 text-gray-200" : "bg-white text-gray-900";
-  const panelClass = isDark ? "bg-gray-800 border-gray-700" : "bg-gray-100 border-gray-300";
+  const bgClass = isDark
+    ? "bg-gray-900 text-gray-200"
+    : "bg-white text-gray-900";
+  const panelClass = isDark
+    ? "bg-gray-800 border-gray-700"
+    : "bg-gray-100 border-gray-300";
   const editorTheme = isDark ? "vs-dark" : "vs-light";
 
   return (
     <div className={`min-h-screen ${bgClass}`}>
       {/* Header */}
-      <div className={`${panelClass} border-b px-6 py-4 flex items-center justify-between`}>
+      <div
+        className={`${panelClass} border-b px-6 py-4 flex items-center justify-between`}
+      >
         <div>
           <Link
             to="/challenges"
-            className={`text-sm mb-2 inline-block ${isDark ? "text-blue-400 hover:text-blue-300" : "text-blue-600 hover:text-blue-500"}`}
+            className={`text-sm mb-2 inline-block ${
+              isDark
+                ? "text-blue-400 hover:text-blue-300"
+                : "text-blue-600 hover:text-blue-500"
+            }`}
           >
             ← Back to Challenges
           </Link>
@@ -207,6 +213,18 @@ export default function Playground() {
             {isDark ? "🌙 Dark" : "☀️ Light"}
           </button>
 
+          {/* View Solution Button */}
+          <Link
+            to={`/solution/${id}`}
+            className={`px-4 py-2 rounded border text-sm font-medium transition-colors ${
+              isDark
+                ? "border-gray-600 text-gray-300 hover:bg-gray-700"
+                : "border-gray-300 text-gray-700 hover:bg-gray-50"
+            }`}
+          >
+            💡 View Solution
+          </Link>
+
           <button
             onClick={handleSubmit}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
@@ -221,13 +239,25 @@ export default function Playground() {
         {/* Left Panel - Monaco Editor */}
         <div className={`w-1/2 ${panelClass} flex flex-col`}>
           {/* Tabs */}
-          <div className={`flex border-b ${isDark ? "border-gray-700" : "border-gray-300"}`}>
+          <div
+            className={`flex border-b ${
+              isDark ? "border-gray-700" : "border-gray-300"
+            }`}
+          >
             <button
               onClick={() => setActiveTab("html")}
               className={`flex-1 py-2 text-sm font-medium ${
                 activeTab === "html"
-                  ? `${isDark ? "bg-gray-900 text-blue-400" : "bg-white text-blue-600 border-b-2 border-blue-400"}`
-                  : `${isDark ? "text-gray-400 hover:text-gray-200" : "text-gray-500 hover:text-gray-800"}`
+                  ? `${
+                      isDark
+                        ? "bg-gray-900 text-blue-400"
+                        : "bg-white text-blue-600 border-b-2 border-blue-400"
+                    }`
+                  : `${
+                      isDark
+                        ? "text-gray-400 hover:text-gray-200"
+                        : "text-gray-500 hover:text-gray-800"
+                    }`
               }`}
             >
               HTML
@@ -236,8 +266,16 @@ export default function Playground() {
               onClick={() => setActiveTab("css")}
               className={`flex-1 py-2 text-sm font-medium ${
                 activeTab === "css"
-                  ? `${isDark ? "bg-gray-900 text-blue-400" : "bg-white text-blue-600 border-b-2 border-blue-400"}`
-                  : `${isDark ? "text-gray-400 hover:text-gray-200" : "text-gray-500 hover:text-gray-800"}`
+                  ? `${
+                      isDark
+                        ? "bg-gray-900 text-blue-400"
+                        : "bg-white text-blue-600 border-b-2 border-blue-400"
+                    }`
+                  : `${
+                      isDark
+                        ? "text-gray-400 hover:text-gray-200"
+                        : "text-gray-500 hover:text-gray-800"
+                    }`
               }`}
             >
               CSS
@@ -269,11 +307,17 @@ export default function Playground() {
         </div>
 
         {/* Right Panel - Goal + Your Output */}
-        <div className={`w-1/2 p-4 overflow-y-auto flex flex-col gap-6 ${bgClass}`}>
+        <div
+          className={`w-1/2 p-4 overflow-y-auto flex flex-col gap-6 ${bgClass}`}
+        >
           <div>
             <h3 className="font-semibold mb-2">🎯 Desired Goal</h3>
             <div className={`border p-4 rounded shadow-inner ${panelClass}`}>
-              <IframePreview html={challenge.goalHtml} css={goalCss} height={280} />
+              <IframePreview
+                html={challenge.goalHtml}
+                css={goalCss}
+                height={280}
+              />
             </div>
           </div>
 
